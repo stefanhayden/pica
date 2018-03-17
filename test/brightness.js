@@ -11,10 +11,10 @@ function fill(arr, val) {
   for (let i = 0; i < arr.length; i++) { arr[i] = val; }
 }
 
-const SRC_W =  1000,
-      SRC_H =  768,
-      DEST_W = 140,
-      DEST_H = 108;
+const SRC_W =  5000,
+      SRC_H =  5000,
+      DEST_W = 23,
+      DEST_H = 23;
 
 function createTest(color) {
   let srcSize    = 4 * SRC_W * SRC_H,
@@ -28,7 +28,7 @@ function createTest(color) {
 
   let test_name = `test ${SRC_W}x${SRC_H} -> ${DEST_W}x${DEST_H} with color #${hexColor}${hexColor}${hexColor}`;
 
-  it(test_name, function () {
+  it.only(test_name, function () {
     return pica.resizeBuffer({
       src:      src,
       width:    SRC_W,
@@ -44,5 +44,5 @@ function createTest(color) {
 
 describe('Brightness should not change', function () {
   createTest(255);
-  createTest(127);
+  // createTest(127);
 });
