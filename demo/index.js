@@ -71,7 +71,7 @@ function updateOrig() {
 var updateResized = _.debounce(function () {
   var dst, ctx, width, start, time;
 
-  width = $('.pica-options').width();
+  width = 3;
 
   // Resize with canvas
 
@@ -101,7 +101,7 @@ var updateResized = _.debounce(function () {
   var offScreenCanvas = document.createElement('canvas')
   offScreenCanvas.width  = dst.width;
   offScreenCanvas.height = dst.height;
-
+  
   start = performance.now();
 
   //resizer.resize(img, offScreenCanvas, {
